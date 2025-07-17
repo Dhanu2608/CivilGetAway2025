@@ -134,8 +134,8 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 18px;         /* Adjust vertically */
-                left: 150px;       /* Adjust right of "Dear" */
+                top: 21px;         /* Adjust vertically */
+                left: 100px;       /* Adjust right of "Dear" */
                 font-size: 23px;
                 font-weight: bold;
                 color: pink;
@@ -146,7 +146,7 @@ if st.session_state.show_result:
             .team-name {{
                 position: absolute;
                 top: 200px;        /* Align with "You Belong To" */
-                left: 150px;       /* Align after "You Belong To" */
+                left: 95px;       /* Align after "You Belong To" */
                 font-size: 24px;
                 font-weight: 600;
                 color: orange;
@@ -195,7 +195,7 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 300px; margin-bottom: 20px;'>
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 250px; margin-bottom: 20px;'>
                 <img src="data:image/png;base64,{logo_base64}" style="width: 160px; height: auto; border-radius: 15px;" />
             </div>
             """,
