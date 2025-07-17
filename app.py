@@ -146,7 +146,7 @@ if st.session_state.show_result:
             .team-name {{
                 position: absolute;
                 top: 190px;        /* Align with "You Belong To" */
-                left: 90px;       /* Align after "You Belong To" */
+                left: 60px;       /* Align after "You Belong To" */
                 font-size: 24px;
                 font-weight: 600;
                 color: orange;
