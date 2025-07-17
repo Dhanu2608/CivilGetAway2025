@@ -54,70 +54,6 @@ def show_results(emp_id):
 
 # ----------------------------
 # PAGE 1 – Search Input
-# ----------------------------
-# PAGE 1 – Employee ID Input (Mobile Optimized)
-if not st.session_state.show_result:
-    set_bg_gif("page1.gif")  # Keep your background as-is
-
-    st.markdown("""
-        <style>
-        header, footer { visibility: hidden; }
-        .block-container {
-            padding: 0rem 1rem;
-        }
-
-        .input-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10vh;
-        }
-
-        .stTextInput>div>input {
-            text-align: center;
-            font-size: 18px;
-        }
-
-        .stButton button {
-            width: 150px;
-            font-size: 14px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            margin: 5px auto;
-            display: block;
-        }
-
-        @media (max-width: 600px) {
-            .title { font-size: 22px; margin-top: 7vh; }
-            .stTextInput>div>input { font-size: 16px; }
-            .stButton button { font-size: 14px; padding: 8px 18px; }
-        }
-        </style>
-    """, unsafe_allow_html=True)
-
-    with st.container():
-        st.markdown("<div class='input-container'>", unsafe_allow_html=True)
-        emp_id = st.text_input("Enter your Employee ID", key="input_emp_id")
-        st.markdown("</div>", unsafe_allow_html=True)
-
-        if st.button("Search"):
-            if emp_id:
-                df = pd.read_excel("employee_data.xlsx")
-                matched_row = df[df["Employee ID"] == emp_id]
-
-                if not matched_row.empty:
-                    st.session_state.emp_name = matched_row["Employee Name"].values[0]
-                    st.session_state.team = matched_row["Team Name"].values[0]
-                    st.session_state.show_result = True
-                    st.session_state.emp_id = emp_id
-                    st.rerun()
-                else:
-                    st.error("Employee ID not found.")
-            else:
-                st.warning("Please enter your Employee ID.")
 
 
 # PAGE 1: Search Screen
@@ -129,7 +65,7 @@ if not st.session_state.show_result:
         header, footer {{ visibility: hidden; }}
         .block-container {{
             padding: 0rem 1rem;
-            margin-top: 30vh;
+            margin-top: 15vh;
         }}
         </style>
     """, unsafe_allow_html=True)
