@@ -165,10 +165,10 @@ if st.session_state.show_result:
 
     # Map team names to logo file paths
     team_logos = {
-        "NERUPU DAA NERUNGU DAA PAAPOM": "logos/neruppu.png",
-        "GANGERS": "logos/gangers.png",
-        "PORKANDA SINGAM": "logos/porkanda.png",
-        "TIGER KA HUKUM": "logos/tiger.png",
+        "NERUPU DAA NERUNGU DAA PAAPOM": "neruppu.png",
+        "GANGERS": "gangers.png",
+        "PORKANDA SINGAM": "porkanda.png",
+        "TIGER KA HUKUM": "tiger.png",
     }
 
     # Get the team name
