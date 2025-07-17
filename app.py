@@ -70,6 +70,8 @@ if not st.session_state.show_result:
         </style>
     """, unsafe_allow_html=True)
 
+    # Title
+
 
     # Inject custom CSS
     st.markdown("""
@@ -98,7 +100,7 @@ if not st.session_state.show_result:
 
     # Center layout
     col1, col2, col3 = st.columns([1, 2, 1])
-    
+
 
     with col2:
         emp_id = st.text_input("", placeholder="Enter Employee ID", label_visibility="collapsed")
@@ -122,7 +124,7 @@ if st.session_state.show_result:
                     header, footer {{ visibility: hidden; }}
                     .block-container {{
                         padding: 0rem 1rem;
-                        margin-top: 2vh;
+                        margin-top: 3vh;
                     }}
                     </style>
                 """, unsafe_allow_html=True)
@@ -132,9 +134,9 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 16px;         /* Adjust vertically */
-                left: 95px;       /* Adjust right of "Dear" */
-                font-size: 22px;
+                top: 21px;         /* Adjust vertically */
+                left: 255px;       /* Adjust right of "Dear" */
+                font-size: 32px;
                 font-weight: bold;
                 color: pink;
                 font-family: 'Brush Script MT', serif;
@@ -143,12 +145,12 @@ if st.session_state.show_result:
 
             .team-name {{
                 position: absolute;
-                top: 210px;        /* Align with "You Belong To" */
-                left: 70px;       /* Align after "You Belong To" */
-                font-size: 24px;
+                top: 250px;        /* Align with "You Belong To" */
+                left: 220px;       /* Align after "You Belong To" */
+                font-size: 30px;
                 font-weight: 600;
                 color: orange;
-                width: 190px;
+                width: 225px;
                 text-align: center;
                 font-family: 'Algerian', serif;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
@@ -160,6 +162,14 @@ if st.session_state.show_result:
         """,
         unsafe_allow_html=True
     )
+
+    st.markdown("""<div style='text-align: center; padding-top: 20px;'>""", unsafe_allow_html=True)
+    if st.button("🔄 Search Again"):
+        for key in ["emp_name", "team", "show_result"]:
+            if key in st.session_state:
+                del st.session_state[key]
+        st.rerun()
+    st.markdown("</div>", unsafe_allow_html=True)
 
     # Map team names to logo file paths
     team_logos = {
@@ -185,8 +195,8 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 300px; margin-bottom: 20px;'>
-                <img src="data:image/png;base64,{logo_base64}" style="width: 150px; height: auto; border-radius: 15px;" />
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 385px; margin-bottom: 20px;'>
+                <img src="data:image/png;base64,{logo_base64}" style="width: 170px; height: auto; border-radius: 15px;" />
             </div>
             """,
             unsafe_allow_html=True
@@ -195,13 +205,4 @@ if st.session_state.show_result:
 
     # 🔥 Call this function where you want to display the logo
     centered_logo(logo_path)
-
-st.markdown("""<div style='text-align: center; padding-top: 20px;'>""", unsafe_allow_html=True)
-if st.button("🔄 Search Again"):
-    for key in ["emp_name", "team", "show_result"]:
-        if key in st.session_state:
-            del st.session_state[key]
-    st.rerun()
-st.markdown("</div>", unsafe_allow_html=True)
-
 
