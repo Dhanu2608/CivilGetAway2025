@@ -70,11 +70,6 @@ if not st.session_state.show_result:
         </style>
     """, unsafe_allow_html=True)
 
-    # Title
-    st.markdown(
-        "<h4 style='text-align: center; font-family: 'Times New Roman', serif;color: white; margin-bottom: -50px '>Enter Your Employee ID</h4>",
-        unsafe_allow_html=True
-    )
 
     # Inject custom CSS
     st.markdown("""
