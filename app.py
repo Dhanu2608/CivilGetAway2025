@@ -122,7 +122,7 @@ if st.session_state.show_result:
                     header, footer {{ visibility: hidden; }}
                     .block-container {{
                         padding: 0rem 1rem;
-                        margin-top: 3vh;
+                        margin-top: 2vh;
                     }}
                     </style>
                 """, unsafe_allow_html=True)
@@ -132,9 +132,9 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 21px;         /* Adjust vertically */
-                left: 255px;       /* Adjust right of "Dear" */
-                font-size: 32px;
+                top: 25px;         /* Adjust vertically */
+                left: 150px;       /* Adjust right of "Dear" */
+                font-size: 16px;
                 font-weight: bold;
                 color: pink;
                 font-family: 'Brush Script MT', serif;
@@ -143,12 +143,12 @@ if st.session_state.show_result:
 
             .team-name {{
                 position: absolute;
-                top: 250px;        /* Align with "You Belong To" */
-                left: 220px;       /* Align after "You Belong To" */
-                font-size: 30px;
+                top: 200px;        /* Align with "You Belong To" */
+                left: 150px;       /* Align after "You Belong To" */
+                font-size: 15px;
                 font-weight: 600;
                 color: orange;
-                width: 225px;
+                width: 150px;
                 text-align: center;
                 font-family: 'Algerian', serif;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
@@ -185,8 +185,8 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 385px; margin-bottom: 20px;'>
-                <img src="data:image/png;base64,{logo_base64}" style="width: 170px; height: auto; border-radius: 15px;" />
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 250px; margin-bottom: 20px;'>
+                <img src="data:image/png;base64,{logo_base64}" style="width: 130px; height: auto; border-radius: 15px;" />
             </div>
             """,
             unsafe_allow_html=True
