@@ -72,7 +72,7 @@ if not st.session_state.show_result:
 
     # Title
     st.markdown(
-        "<h4 style='text-align: center; font-family: 'Times New Roman', serif;color: white; margin-bottom: 5px '>Enter Your Employee ID</h4>",
+        "<h4 style='text-align: center; font-family: 'Times New Roman', serif;color: white; margin-bottom: -10px '>Enter Your Employee ID</h4>",
         unsafe_allow_html=True
     )
 
@@ -80,15 +80,15 @@ if not st.session_state.show_result:
     st.markdown("""
         <style>
         .stTextInput > div > input {
-            width: 150px;
+            width: 100px;
             padding: 6px 10px;
             font-size: 14px;
-            border-radius: 20px;
+            border-radius: 15px;
             margin-top: 5px;
             text-align: center;
         }
         .stButton > button {
-            width: 100px;
+            width: 150px;
             font-size: 14px;
             padding: 8px 16px;
             border-radius: 20px;
