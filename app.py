@@ -55,62 +55,79 @@ def show_results(emp_id):
 # ----------------------------
 # PAGE 1 – Search Input
 # ----------------------------
-# PAGE 1: Search Screen
+# PAGE 1 – Employee ID Input (Mobile Optimized)
 if not st.session_state.show_result:
-    set_bg_gif("page1.gif")
+    set_bg_gif("page1.gif")  # Keep your background as-is
 
-    st.markdown(f"""
-        <style>
-        header, footer {{ visibility: hidden; }}
-        .block-container {{
-            padding: 0rem 1rem;
-            margin-top: 30vh;
-        }}
-        </style>
-    """, unsafe_allow_html=True)
-
-    # Title
-    st.markdown(
-        "<h4 style='text-align: center; font-family: 'Times new Roman', serif;color: white;'>Enter Your Employee ID</h4>",
-        unsafe_allow_html=True
-    )
-
-    # Inject custom CSS
     st.markdown("""
         <style>
-        .stTextInput > div > input {
-            width: 200px;
-            padding: 6px 10px;
-            font-size: 14px;
-            border-radius: 20px;
-            text-align: center;
+        header, footer { visibility: hidden; }
+        .block-container {
+            padding: 0rem 1rem;
         }
-        .stButton > button {
-            width: 150px;
-            font-size: 14px;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background-color: #4CAF50;
+
+        .title {
+            font-size: 28px;
+            text-align: center;
+            font-weight: bold;
+            color: #FFD700;
+            text-shadow: 1px 1px 2px black;
+            margin-top: 10vh;
+            font-family: 'Copperplate', sans-serif;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 6vh;
+        }
+
+        .stTextInput>div>input {
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .stButton button {
+            background-color: #FFA500;
             color: white;
-            border: none;
-            margin: 5px auto;
-            display: block;
+            font-weight: bold;
+            padding: 10px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .title { font-size: 22px; margin-top: 7vh; }
+            .stTextInput>div>input { font-size: 16px; }
+            .stButton button { font-size: 14px; padding: 8px 18px; }
         }
         </style>
     """, unsafe_allow_html=True)
 
-    # Center layout
-    col1, col2, col3 = st.columns([1, 2, 1])
+    st.markdown("<div class='title'>Employee Team Lookup</div>", unsafe_allow_html=True)
 
-    with col2:
-        emp_id = st.text_input("", placeholder="Enter Employee ID", label_visibility="collapsed")
-        search = st.button("🔍 Search")
+    with st.container():
+        st.markdown("<div class='input-container'>", unsafe_allow_html=True)
+        emp_id = st.text_input("Enter your Employee ID", key="input_emp_id")
+        st.markdown("</div>", unsafe_allow_html=True)
 
-    if search:
-        if emp_id.strip() == "":
-            st.warning("⚠️ Please enter an Employee ID.")
-        else:
-            show_results(emp_id)
+        if st.button("Search"):
+            if emp_id:
+                df = pd.read_excel("employee_data.xlsx")
+                matched_row = df[df["Employee ID"] == emp_id]
+
+                if not matched_row.empty:
+                    st.session_state.emp_name = matched_row["Employee Name"].values[0]
+                    st.session_state.team = matched_row["Team Name"].values[0]
+                    st.session_state.show_result = True
+                    st.session_state.emp_id = emp_id
+                    st.rerun()
+                else:
+                    st.error("Employee ID not found.")
+            else:
+                st.warning("Please enter your Employee ID.")
 
 # ----------------------------
 # PAGE 2 – Show Results
