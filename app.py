@@ -132,7 +132,7 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 15px;         /* Adjust vertically */
+                top: 16px;         /* Adjust vertically */
                 left: 95px;       /* Adjust right of "Dear" */
                 font-size: 22px;
                 font-weight: bold;
@@ -144,7 +144,7 @@ if st.session_state.show_result:
             .team-name {{
                 position: absolute;
                 top: 200px;        /* Align with "You Belong To" */
-                left: 90px;       /* Align after "You Belong To" */
+                left: 70px;       /* Align after "You Belong To" */
                 font-size: 24px;
                 font-weight: 600;
                 color: orange;
