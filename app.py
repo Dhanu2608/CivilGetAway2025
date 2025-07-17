@@ -103,24 +103,10 @@ if not st.session_state.show_result:
 
     # Center layout
     col1, col2, col3 = st.columns([1, 2, 1])
-
-
+    
 
     with col2:
-        st.markdown("""
-            <style>
-            .custom-text-input label {
-                display: none;
-            }
-            .custom-text-input input {
-                text-align: center;
-                font-size: 18px;
-            }
-            </style>
-        """, unsafe_allow_html=True)
-
-        emp_id = st.text_input(" ", key="input_emp_id", label_visibility="collapsed")
-
+        emp_id = st.text_input("", placeholder="Enter Employee ID", label_visibility="collapsed")
         search = st.button("🔍 Search")
 
     if search:
