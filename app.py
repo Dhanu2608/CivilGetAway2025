@@ -132,8 +132,8 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 20px;         /* Adjust vertically */
-                left: 100px;       /* Adjust right of "Dear" */
+                top: 18px;         /* Adjust vertically */
+                left: 95px;       /* Adjust right of "Dear" */
                 font-size: 22px;
                 font-weight: bold;
                 color: pink;
@@ -148,7 +148,7 @@ if st.session_state.show_result:
                 font-size: 24px;
                 font-weight: 600;
                 color: orange;
-                width: 150px;
+                width: 180px;
                 text-align: center;
                 font-family: 'Algerian', serif;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
