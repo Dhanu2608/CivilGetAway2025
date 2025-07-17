@@ -196,3 +196,12 @@ if st.session_state.show_result:
     # 🔥 Call this function where you want to display the logo
     centered_logo(logo_path)
 
+st.markdown("""<div style='text-align: center; padding-top: 20px;'>""", unsafe_allow_html=True)
+if st.button("🔄 Search Again"):
+    for key in ["emp_name", "team", "show_result"]:
+        if key in st.session_state:
+            del st.session_state[key]
+    st.rerun()
+st.markdown("</div>", unsafe_allow_html=True)
+
+
