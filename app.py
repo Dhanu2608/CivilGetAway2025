@@ -132,9 +132,9 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 25px;         /* Adjust vertically */
-                left: 150px;       /* Adjust right of "Dear" */
-                font-size: 16px;
+                top: 22px;         /* Adjust vertically */
+                left: 125px;       /* Adjust right of "Dear" */
+                font-size: 20px;
                 font-weight: bold;
                 color: pink;
                 font-family: 'Brush Script MT', serif;
@@ -143,9 +143,9 @@ if st.session_state.show_result:
 
             .team-name {{
                 position: absolute;
-                top: 200px;        /* Align with "You Belong To" */
-                left: 150px;       /* Align after "You Belong To" */
-                font-size: 15px;
+                top: 220px;        /* Align with "You Belong To" */
+                left: 100px;       /* Align after "You Belong To" */
+                font-size: 22px;
                 font-weight: 600;
                 color: orange;
                 width: 150px;
@@ -185,8 +185,8 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 250px; margin-bottom: 20px;'>
-                <img src="data:image/png;base64,{logo_base64}" style="width: 130px; height: auto; border-radius: 15px;" />
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 280px; margin-bottom: 20px;'>
+                <img src="data:image/png;base64,{logo_base64}" style="width: 150px; height: auto; border-radius: 15px;" />
             </div>
             """,
             unsafe_allow_html=True
