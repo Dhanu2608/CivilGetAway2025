@@ -136,7 +136,7 @@ if st.session_state.show_result:
                 position: absolute;
                 top: 8px;         /* Adjust vertically */
                 left: 100px;       /* Adjust right of "Dear" */
-                font-size: 23px;
+                font-size: 21px;
                 font-weight: bold;
                 color: pink;
                 font-family: 'Brush Script MT', serif;
@@ -187,7 +187,7 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 260px; margin-bottom: 20px;'>
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 280px; margin-bottom: 20px;'>
                 <img src="data:image/png;base64,{logo_base64}" style="width: 160px; height: auto; border-radius: 15px;" />
             </div>
             """,
