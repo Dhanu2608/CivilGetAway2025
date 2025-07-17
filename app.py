@@ -134,9 +134,9 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 21px;         /* Adjust vertically */
-                left: 255px;       /* Adjust right of "Dear" */
-                font-size: 32px;
+                top: 18px;         /* Adjust vertically */
+                left: 150px;       /* Adjust right of "Dear" */
+                font-size: 23px;
                 font-weight: bold;
                 color: pink;
                 font-family: 'Brush Script MT', serif;
@@ -145,12 +145,12 @@ if st.session_state.show_result:
 
             .team-name {{
                 position: absolute;
-                top: 250px;        /* Align with "You Belong To" */
-                left: 220px;       /* Align after "You Belong To" */
-                font-size: 30px;
+                top: 200px;        /* Align with "You Belong To" */
+                left: 150px;       /* Align after "You Belong To" */
+                font-size: 24px;
                 font-weight: 600;
                 color: orange;
-                width: 225px;
+                width: 190px;
                 text-align: center;
                 font-family: 'Algerian', serif;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
@@ -163,7 +163,7 @@ if st.session_state.show_result:
         unsafe_allow_html=True
     )
 
-    st.markdown("""<div style='text-align: center; padding-top: 20px;'>""", unsafe_allow_html=True)
+    st.markdown("""<div style='text-align: center; top: 300px; padding-top: 20px;'>""", unsafe_allow_html=True)
     if st.button("🔄 Search Again"):
         for key in ["emp_name", "team", "show_result"]:
             if key in st.session_state:
@@ -195,8 +195,8 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 385px; margin-bottom: 20px;'>
-                <img src="data:image/png;base64,{logo_base64}" style="width: 170px; height: auto; border-radius: 15px;" />
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 300px; margin-bottom: 20px;'>
+                <img src="data:image/png;base64,{logo_base64}" style="width: 160px; height: auto; border-radius: 15px;" />
             </div>
             """,
             unsafe_allow_html=True
