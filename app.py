@@ -134,7 +134,7 @@ if st.session_state.show_result:
         <style>
             .emp-name {{
                 position: absolute;
-                top: 21px;         /* Adjust vertically */
+                top: 18px;         /* Adjust vertically */
                 left: 100px;       /* Adjust right of "Dear" */
                 font-size: 23px;
                 font-weight: bold;
@@ -145,8 +145,8 @@ if st.session_state.show_result:
 
             .team-name {{
                 position: absolute;
-                top: 200px;        /* Align with "You Belong To" */
-                left: 95px;       /* Align after "You Belong To" */
+                top: 190px;        /* Align with "You Belong To" */
+                left: 90px;       /* Align after "You Belong To" */
                 font-size: 24px;
                 font-weight: 600;
                 color: orange;
@@ -162,14 +162,6 @@ if st.session_state.show_result:
         """,
         unsafe_allow_html=True
     )
-
-    st.markdown("""<div style='text-align: center; top: 300px; padding-top: 20px;'>""", unsafe_allow_html=True)
-    if st.button("🔄 Search Again"):
-        for key in ["emp_name", "team", "show_result"]:
-            if key in st.session_state:
-                del st.session_state[key]
-        st.rerun()
-    st.markdown("</div>", unsafe_allow_html=True)
 
     # Map team names to logo file paths
     team_logos = {
@@ -195,7 +187,7 @@ if st.session_state.show_result:
         logo_base64 = get_image_base64(logo_path)
         st.markdown(
             f"""
-            <div style='display: flex; justify-content: center; align-items: center; margin-top: 250px; margin-bottom: 20px;'>
+            <div style='display: flex; justify-content: center; align-items: center; margin-top: 190px; margin-bottom: 20px;'>
                 <img src="data:image/png;base64,{logo_base64}" style="width: 160px; height: auto; border-radius: 15px;" />
             </div>
             """,
