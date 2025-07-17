@@ -66,21 +66,11 @@ if not st.session_state.show_result:
             padding: 0rem 1rem;
         }
 
-        .title {
-            font-size: 28px;
-            text-align: center;
-            font-weight: bold;
-            color: #FFD700;
-            text-shadow: 1px 1px 2px black;
-            margin-top: 10vh;
-            font-family: 'Copperplate', sans-serif;
-        }
-
         .input-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 6vh;
+            margin-top: 10vh;
         }
 
         .stTextInput>div>input {
@@ -89,13 +79,15 @@ if not st.session_state.show_result:
         }
 
         .stButton button {
-            background-color: #FFA500;
+            width: 150px;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #4CAF50;
             color: white;
-            font-weight: bold;
-            padding: 10px 24px;
-            font-size: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
+            border: none;
+            margin: 5px auto;
+            display: block;
         }
 
         @media (max-width: 600px) {
@@ -105,8 +97,6 @@ if not st.session_state.show_result:
         }
         </style>
     """, unsafe_allow_html=True)
-
-    st.markdown("<div class='title'>Employee Team Lookup</div>", unsafe_allow_html=True)
 
     with st.container():
         st.markdown("<div class='input-container'>", unsafe_allow_html=True)
@@ -128,6 +118,64 @@ if not st.session_state.show_result:
                     st.error("Employee ID not found.")
             else:
                 st.warning("Please enter your Employee ID.")
+
+
+# PAGE 1: Search Screen
+if not st.session_state.show_result:
+    set_bg_gif("page1.gif")
+
+    st.markdown(f"""
+        <style>
+        header, footer {{ visibility: hidden; }}
+        .block-container {{
+            padding: 0rem 1rem;
+            margin-top: 30vh;
+        }}
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Title
+    st.markdown(
+        "<h4 style='text-align: center; font-family: 'Times new Roman', serif;color: white;'>Enter Your Employee ID</h4>",
+        unsafe_allow_html=True
+    )
+
+    # Inject custom CSS
+    st.markdown("""
+        <style>
+        .stTextInput > div > input {
+            width: 200px;
+            padding: 6px 10px;
+            font-size: 14px;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .stButton > button {
+            width: 150px;
+            font-size: 14px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin: 5px auto;
+            display: block;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+
+    # Center layout
+    col1, col2, col3 = st.columns([1, 2, 1])
+
+    with col2:
+        emp_id = st.text_input("", placeholder="Enter Employee ID", label_visibility="collapsed")
+        search = st.button("🔍 Search")
+
+    if search:
+        if emp_id.strip() == "":
+            st.warning("⚠️ Please enter an Employee ID.")
+        else:
+            show_results(emp_id)
 
 # ----------------------------
 # PAGE 2 – Show Results
