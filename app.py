@@ -153,7 +153,7 @@ if st.session_state.show_result:
                 color: orange;
                 width: 190px;
                 text-align: center;
-                font-family: 'Raleway', serif;
+                font-family: 'Raleway', dots;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
             }}
         </style>
