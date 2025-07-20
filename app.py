@@ -168,7 +168,7 @@ if st.session_state.show_result:
     team_logos = {
         "NERUPU DAA NERUNGU DAA PAAPOM": "neruppu.png",
         "GANGERS": "gangers.png",
-        "PORKANDA SINGAM": "porkanda.png",
+        "POR KANDA SINGAM": "porkanda.png",
         "TIGER KA HUKUM": "tiger.png",
     }
 
