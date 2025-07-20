@@ -135,7 +135,7 @@ if st.session_state.show_result:
             .emp-name {{
                 position: absolute;
                 top: 10px;         /* Adjust vertically */
-                left: 98px;       /* Adjust right of "Dear" */
+                left: 92px;       /* Adjust right of "Dear" */
                 font-size: 21px;
                 font-weight: bold;
                 color: pink;
