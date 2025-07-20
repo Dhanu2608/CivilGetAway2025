@@ -136,10 +136,11 @@ if st.session_state.show_result:
                 position: absolute;
                 top: 10px;         /* Adjust vertically */
                 left: 92px;       /* Adjust right of "Dear" */
-                font-size: 21px;
-                font-weight: italic;
+                font-size: 19px;
+                font-weight: bold;
+                font-style: italic;
                 color: pink;
-                font-family: 'Merriweather', serif;
+                font-family: 'Merriweather', sans;
                 text-shadow: 0 0 0.5px #ffffff, 0 0 0px #00f0ff;
             }}
 
