@@ -137,9 +137,9 @@ if st.session_state.show_result:
                 top: 10px;         /* Adjust vertically */
                 left: 92px;       /* Adjust right of "Dear" */
                 font-size: 21px;
-                font-weight: bold;
+                font-weight: italic;
                 color: pink;
-                font-family: 'Brush Script MT', serif;
+                font-family: 'Merriweather', serif;
                 text-shadow: 0 0 0.5px #ffffff, 0 0 0px #00f0ff;
             }}
 
@@ -152,7 +152,7 @@ if st.session_state.show_result:
                 color: orange;
                 width: 190px;
                 text-align: center;
-                font-family: 'Algerian', serif;
+                font-family: 'Raleway', serif;
                 text-shadow: 0 0 1px #FFD700, 0 0 2px #FFB800;
             }}
         </style>
