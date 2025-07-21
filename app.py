@@ -198,4 +198,30 @@ if st.session_state.show_result:
 
     # 🔥 Call this function where you want to display the logo
     centered_logo(logo_path)
+    # "Search Again" button to restart the app
+st.markdown("""
+    <style>
+        .search-again-btn > button {
+            background-color: #f44336;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            padding: 8px 16px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+search_again = st.button("🔁 Search Again", key="search_again", help="Search for another employee")
+
+if search_again:
+    st.session_state.show_result = False
+    st.session_state.emp_id = ""
+    st.session_state.emp_name = ""
+    st.session_state.team = ""
+    st.rerun()
+
 
